@@ -24,10 +24,11 @@ Observações: Mesmo que a localidade não esteja com problemas relacionados ao 
 POO - Window@2x (3)
 
 🚀Tecnologias Usadas
+
 Java
-Status do Projeto
-Em construção... 🚧
+
 Desenvolvedores
+
 -Lucas Rabelo Pereira
 -João Victor Resende
 -Yuri Coelho
