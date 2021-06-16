@@ -33,9 +33,9 @@ public class HotelController {
 	}
 
 	@GetMapping(value = "/{id}") 
-	public ResponseEntity<Hotel> findById(@PathVariable Long id) {
+	public String findById(@PathVariable Long id) {
 		Hotel obj = service.findById(id); 
-		return ResponseEntity.ok().body(obj);
+		return obj.TotalOcupacao();
 	}
 
 	@PostMapping 

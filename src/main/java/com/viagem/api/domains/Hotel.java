@@ -1,7 +1,5 @@
 package com.viagem.api.domains;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -103,7 +101,13 @@ public class Hotel {
 		return true;
 	}
 	
-	
-	
+	public String TotalOcupacao(){
+		
+		double totalOcupados = 0.0 ;
+		
+		
+		return "Os quartos vazios são: " + totalOcupados;
+		
+	}
 	
 }
