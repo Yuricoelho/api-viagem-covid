@@ -16,14 +16,13 @@ public class Hotel {
 	private String nome;
 	private Integer qtdQuartos;
 	private Double ocupacao;
-	
-	
+
 	@ManyToOne
 	@JoinColumn(name = "cidade_id")
 	private Cidade cidade;
-	
+
 	public Hotel() {
-		
+
 	}
 
 	public Hotel(Long id, String nome, Integer qtdQuartos, Double ocupacao, Cidade cidade) {
@@ -66,8 +65,6 @@ public class Hotel {
 		this.ocupacao = ocupacao;
 	}
 
-	
-
 	public Cidade getCidade() {
 		return cidade;
 	}
@@ -100,14 +97,35 @@ public class Hotel {
 			return false;
 		return true;
 	}
-	
-	public String TotalOcupacao(){
-		
-		double totalOcupados = 0.0 ;
-		
-		
-		return "Os quartos vazios são: " + totalOcupados;
-		
+
+	public String TotalOcupacao() {
+
+		String totalOcupados = null;
+
+		if (ocupacao <= 33.00) {
+
+			totalOcupados = "Quantidade de quartos no hotel: " + qtdQuartos + "\n"
+					+ "Quantidade de Quartos Disponíveis para reserva: "
+					+ (int) (qtdQuartos - ((ocupacao / 100) * qtdQuartos)) + "\n" + "Hotel com ocupação de " + ocupacao
+					+ "%" + " Agende sua reserva e mantenha os Cuidados!";
+
+		} else if (ocupacao > 33.00 && ocupacao < 69.99) {
+
+			totalOcupados = "Quantidade de quartos no hotel: " + qtdQuartos + "\n"
+					+ "Quantidade de Quartos Disponíveis para reserva: "
+					+ (int) (qtdQuartos - ((ocupacao / 100) * qtdQuartos)) + "\n" + "Hotel com ocupação de " + ocupacao
+					+ "%" + " da capacidade ocupada, Fica a seu critério agendar a hospedagem, ou aguardar diminuir!";
+
+		} else {
+
+			totalOcupados = "Quantidade de quartos no hotel: " + qtdQuartos + "\n"
+					+ "Quantidade de Quartos Disponíveis para reserva: "
+					+ (int) (qtdQuartos - ((ocupacao / 100) * qtdQuartos)) + "\n" + "Hotel com " + ocupacao + "%"
+					+ " Não recomendamos fazer a hospedagem!";
+		}
+
+		return totalOcupados;
+
 	}
-	
+
 }
