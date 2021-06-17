@@ -6,7 +6,7 @@ Nosso intuito com a API apresentada é proporcionar as informações necessária
 
 🚀Tecnologia Utilizada:
 
-Java
+Java, Spring Boot, Spring Data JPA e H2.
 
 Desenvolvedores:
 
